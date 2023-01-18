@@ -5,9 +5,8 @@ type Set[T comparable] struct {
 }
 
 // NewSet Constructor
-func (set *Set[T]) NewSet() *Set[T] {
+func (set *Set[T]) NewSet() {
 	set.m = make(map[T]bool)
-	return set
 }
 
 // Add method adds the key t. Return false if there is already the key in the map
