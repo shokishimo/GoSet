@@ -29,3 +29,9 @@ func (set *Set[T]) Delete(t T) bool {
 	}
 	return false
 }
+
+// Contain check if the input key exists in the map. Return true if it exists, false otherwise.
+func (set *Set[T]) Contain(t T) bool {
+	_, ok := set.m[t]
+	return ok
+}
