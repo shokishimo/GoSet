@@ -30,10 +30,28 @@ func (set *Set[T]) Delete(t T) bool {
 	return false
 }
 
+// DeleteAll method deletes all the elements in the set
+func (set *Set[T]) DeleteAll() {
+	set.m = make(map[T]bool)
+}
+
 // Contain check if the input key exists in the map. Return true if it exists, false otherwise.
 func (set *Set[T]) Contain(t T) bool {
 	if _, ok := set.m[t]; ok {
 		return true
 	}
 	return false
+}
+
+// IsEmpty method return true if the set is empty. Return false otherwise
+func (set *Set[T]) IsEmpty() bool {
+	if l := len(set.m); l == 0 {
+		return true
+	}
+	return false
+}
+
+// Size method return the size of the set
+func (set *Set[T]) Size() int {
+	return len(set.m)
 }
