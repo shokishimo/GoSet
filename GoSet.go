@@ -32,6 +32,8 @@ func (set *Set[T]) Delete(t T) bool {
 
 // Contain check if the input key exists in the map. Return true if it exists, false otherwise.
 func (set *Set[T]) Contain(t T) bool {
-	_, ok := set.m[t]
-	return ok
+	if _, ok := set.m[t]; ok {
+		return true
+	}
+	return false
 }
